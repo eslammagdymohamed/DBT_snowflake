@@ -1,0 +1,15 @@
+version: 2
+sources:
+  - name: dbt
+    database: dbt
+    schema: RAW_OLIST
+    tables:
+      - name: customers
+      - name: orders
+      - name: order_items
+      - name: order_payments
+      - name: products
+      - name: sellers
+      - name: order_reviews
+      - name: geolocation
+      - name: product_category_name_translation

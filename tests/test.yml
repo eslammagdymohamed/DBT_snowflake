@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Raw orders data cleaned and typed"
+    columns:
+      - name: order_id
+        tests: [not_null, unique]
+
+      - name: customer_id
+        tests:
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+
+  - name: stg_customers
+    description: "Unique customers and their geographic info"
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]
+      - name: customer_state
+
+    
+
+  - name: stg_products
+    description: "Unique product "
+    columns:
+      - name: product_id
+        tests: [not_null, unique]
+      - name: product_id    
+
+  - name: stg_sellers
+    description: "Unique seller "
+    columns:
+      - name: seller_id
+        tests: [not_null, unique]
+      - name: seller_id    

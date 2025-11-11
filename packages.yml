@@ -1,3 +1,13 @@
-packages:
-  - package: dbt-labs/dbt_utils
-    version: 1.3.0
+dbt_pr:
+  outputs:
+    dev:
+      type: snowflake
+      account: tw48497.ap_south_1.aws
+      user: eslamm
+      password: Eslam_magdy1212
+      role: accountadmin
+      database: dbt
+      schema: STG_OLIST         # just a base schema, dbt will override this
+      warehouse: compute_wh
+      threads: 4
+  target: dev
